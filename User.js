@@ -8,7 +8,7 @@
 //   return a+b;
 // }
 // console.log(sum(1,2));
-class User {
+export default class User {
   #_name; //# = private
   #_age;
   constructor(name,age) {
@@ -26,4 +26,4 @@ class User {
   }
 }
 
-module.exports = User;
+//module.exports = User;
