@@ -12,5 +12,8 @@
     "js"
   ],
   "author": "Danylo Hychak <wemlirz35@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
 }
