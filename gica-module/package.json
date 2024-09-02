@@ -1,19 +1,21 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "nodejs proj",
+  "name": "gica-module",
+  "version": "1.0.2",
+  "description": "gica Node JS module",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "gica",
+    "module",
     "node",
     "js"
   ],
   "author": "Danylo Hychak <wemlirz35@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.3.0"
+    "gica-module": "^1.0.2"
   }
 }
