@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Phone",
+      "price": 2000
+    },
+    {
+      "id": 1,
+      "name": "GPU",
+      "price": 3000
+    },
+    {
+      "id": 1,
+      "name": "CPU",
+      "price": 2500
+    }
+  ]
+}
