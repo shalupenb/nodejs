@@ -15,6 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
-    "gica_sb83-module": "^1.0.0"
+    "gica-its-module": "^1.0.0"
   }
 }
