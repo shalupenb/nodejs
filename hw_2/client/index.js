@@ -1,3 +1,3 @@
 import Products from "./Products.js";
 const product = new Products();
-console.log(product.toString());
+console.log(product.get());

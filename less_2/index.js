@@ -1,4 +1,4 @@
-import "dotenv/config";
+// import "dotenv/config";
 // import dotenv from "dotenv";
 // dotenv.config();
 // console.log(process.env.APP_TITLE);
@@ -8,7 +8,7 @@ import "dotenv/config";
 //   console.log("5 sec delay");
 //   console.log(process.exit(0));
 // }, 5000);
-//while(true) {}
+// while(true) {}
 // const interval = setInterval(() => {
 //   console.log("sI");
 // }, 1000);
@@ -30,11 +30,11 @@ import "dotenv/config";
 //   console.log("microtask");
 // });
 
-const product = {
-  id: 1,
-  title: "tv",
-  price: 30000,
-};
+// const product = {
+//   id: 1,
+//   title: "tv",
+//   price: 30000,
+// };
 // const product2 = product; // поверхностное копирование
 // product.id = 2;
 // console.log(product2);
@@ -77,11 +77,11 @@ const product = {
 //   .then(data=>data.json())
 //   .then((res) => console.log(res))
 //   .catch();
-fetch("http://localhost:3000/users", {
-  method: "POST",
-  body: JSON.stringify({
-    name: "Nikita",
-  }),
-})
-  .then((data) => console.log(data))
-  .catch();
+// fetch("http://localhost:3000/users", {
+//   method: "POST",
+//   body: JSON.stringify({
+//     name: "Nikita",
+//   }),
+// })
+//   .then((data) => console.log(data))
+//   .catch();

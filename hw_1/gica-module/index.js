@@ -8,6 +8,9 @@ export default class Player {
   getName() {
     return this.#_name;
   }
+  setLevel(level) {
+    this.#_level = level;
+  }
   getLevel() {
     return this.#_level;
   }
