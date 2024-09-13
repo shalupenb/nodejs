@@ -10,10 +10,15 @@ const buyers = [
   new Buyer("user5@example.com", "kent5"),
 ];
 
-buyers.forEach(buyer => {
-  emitter.on("sale", (data) =>{
-    console.log(buyer.toString(), `Discount: ${data.discount}`);
-  });
-});
+// buyers.forEach(buyer => {
+//   emitter.on("sale", (data) =>{
+//     console.log(buyer.toString(), `Discount: ${data.discount}`);
+//   });
+// });
+// emitter.emit("sale", {discount: "50%"});
 
-emitter.emit("sale", {discount: "50%"});
+buyers.forEach((buyer) => {
+  emitter.on("sale", (sale) => buyer.notifyAboutSale(sale));
+});
+ 
+emitter.emit("sale", 20);
