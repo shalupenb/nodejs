@@ -6,14 +6,19 @@
       "price": 2000
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "GPU",
       "price": 3000
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "CPU",
       "price": 2500
+    },
+    {
+      "id": "9239",
+      "name": "smth",
+      "price": 1000
     }
   ]
 }
