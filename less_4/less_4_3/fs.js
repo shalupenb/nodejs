@@ -39,13 +39,27 @@ if(!fs.existsSync(my_dir)) {
 
 //#region 3
 //========================3===========================
-const argument = process.argv[2];
-log("Argument recieved from console: " + argument);
+// const argument = process.argv[2];
+// log("Argument recieved from console: " + argument);
 
-const buff = Buffer.from(argument);
-log("Buffer from argument: " + buff);
-//const content = fs.readFileSync(our_file);
+// const buff = Buffer.from(argument);
+// log("Buffer from argument: " + buff);
+//=====================================================
+//#endregion
 
-//log(content.toString())
+//#region 4
+//========================4===========================
+const buffer1 = Buffer.from('Hello ');
+const buffer2 = Buffer.from('World!');
+
+const combinedBuffer = Buffer.concat([buffer1, buffer2]);
+
+fs.writeFile(path.join(my_dir, "output.txt"), combinedBuffer, (err) => {
+  if (err) {
+    console.error('Помилка запису у файл:', err);
+  } else {
+    console.log('Буфер успішно записано у файл!');
+  }
+});
 //=====================================================
 //#endregion
