@@ -2,11 +2,18 @@ GET http://localhost:3000/products
 
 ###
 
-GET http://localhost:3000/products/6
+GET http://localhost:3000/category
 
 ###
 
-POST http://localhost:3000
+GET http://localhost:3000/products/2
+
+###
+
+GET http://localhost:3000/products/qweqwe
+###
+
+POST http://localhost:3000/products
 Content-Type: application/json
 
 {
