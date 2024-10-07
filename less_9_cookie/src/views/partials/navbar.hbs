@@ -1,7 +1,38 @@
-<div>
-  <ul>
-    {{#each navbarList}}
-    <li><a href={{link}}>{{title}}</a></li>
-    {{/each}}
-  </ul>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img
+        src="/images/logos.svg"
+        alt="crm"
+      /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        {{#if user}}
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/user/signup">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/signin">Authorization</a>
+        </li>
+        {{/if}}
+        <li class="nav-item"></li>
+          <a class="nav-link" href="/user/list_of_users">List of users</a>
+        </li>
+    </div>
+    {{#if user}}<div>Hello {{user}}! <a href="/user/logout">Logout</a></div>{{/if}}
+  </div>
+</nav>
