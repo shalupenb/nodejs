@@ -29,6 +29,7 @@ async function run() {
   await clientRedis.connect().catch(console.error);
   const app = express();
   app.use(express.static("public"));
+  app.use(express.static("files"));
   app.use(cookieParser());
   app.use(
     session({

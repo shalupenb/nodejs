@@ -32,7 +32,26 @@
         <li class="nav-item"></li>
           <a class="nav-link" href="/user/list_of_users">List of users</a>
         </li>
+        <li class="nav-item"></li>
+          <a class="nav-link" href="/user/feedback">Feedback</a>
+        </li>
     </div>
-    {{#if user}}<div>Hello {{user}}! <a href="/user/logout">Logout</a></div>{{/if}}
+    {{#if user}}
+    <div>
+      <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{#if mime}}
+            <img src="/{{user}}{{mime}}" class="avatar" alt="avatar">
+            {{else}}
+            <img src="/no-avatar.png" class="avatar" alt="no-avatar">
+            {{/if}}
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">Hello {{user}}!</li>
+            <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+          </ul>
+        </div>
+    </div>
+    {{/if}}
   </div>
 </nav>

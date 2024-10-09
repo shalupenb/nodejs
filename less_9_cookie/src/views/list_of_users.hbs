@@ -5,6 +5,7 @@
       <th scope="col">#</th>
       <th scope="col">Login</th>
       <th scope="col">Email</th>
+      <th scope="col">Image</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,13 @@
         <th scope="row">{{id}}</th>
         <td>{{login}}</td>
         <td>{{email}}</td>
+        <td>
+          {{#if mime}}
+            <img src="/{{login}}{{mime}}" class="list-avatar" alt="avatar">
+            {{else}}
+            <img src="/no-avatar.png" class="list-avatar" alt="no-avatar">
+          {{/if}}
+        </td>
       </tr>
     {{/each}}
   </tbody>

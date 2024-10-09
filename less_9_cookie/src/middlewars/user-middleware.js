@@ -1,9 +1,12 @@
 import { users } from "../data/users.js";
 import bcrypt from "bcrypt";
+import path from "node:path";
+
 export const checkUser = (req, res, next) => {
   if (req.session && req.session.user) {
-    const { login, email } = req.session.user;
+    const { login, mime, email } = req.session.user;
     res.locals.user = login;
+    res.locals.mime = mime;
     res.locals.email = email;
   }
   next();
@@ -27,6 +30,7 @@ export const createUser = (req, res, next) => {
         login: login,
         email: email,
         password: bcrypt.hashSync(password, 10),
+        mime: path.extname(req.file.originalname),
       });
       next();
       return;
