@@ -1,9 +1,16 @@
-export type BookType = {
+// export type BookType = {
+//   id: number;
+//   title: string;
+//   author: string;
+// };
+export interface IBook {
   id: number;
   title: string;
   author: string;
 };
-export const books: Array<BookType> = [
+export interface IBookCreateOrUpdate extends Omit<IBook, "id"> {}
+
+export const books: Array<IBook> = [
   { "id": 1, "title": "book1", "author": "author1" },
   { "id": 2, "title": "book2", "author": "author2" },
   { "id": 3, "title": "book3", "author": "author3" },

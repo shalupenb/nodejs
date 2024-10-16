@@ -1,14 +1,12 @@
 import { Router, Response, Request } from "express";
-import { books, BookType } from "../data/books.js";
+import { books, IBook } from "../data/books.js";
+import { BookController } from "../controllers/book-controller.js";
 const booksRouter = Router();
 
-booksRouter.get("/", (req, res: Response<Array<BookType>>) => {
+booksRouter.get("/", (req, res: Response<Array<IBook>>) => {
   res.status(200).json(books);
 });
-booksRouter.post("/", (req: Request<{}, {}, BookType>, res) => {
-  books.push(req.body);
-  res.status(201).send();
-});
+booksRouter.post("/", BookController.createBook, (req: Request<{}, {}, IBook>, res: Response) => {});
 
 
 export default booksRouter;
