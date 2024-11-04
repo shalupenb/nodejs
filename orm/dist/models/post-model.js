@@ -6,32 +6,46 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Category = void 0;
+exports.Post = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const product_model_1 = require("./product-model");
-let Category = class Category extends sequelize_typescript_1.Model {
+const user_model_1 = require("./user-model");
+let Post = class Post extends sequelize_typescript_1.Model {
 };
-exports.Category = Category;
+exports.Post = Post;
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     })
-], Category.prototype, "id", void 0);
+], Post.prototype, "id", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING(30),
+        allowNull: false,
+    })
+], Post.prototype, "title", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
-        unique: true,
     })
-], Category.prototype, "title", void 0);
+], Post.prototype, "description", void 0);
 __decorate([
-    (0, sequelize_typescript_1.HasMany)(() => product_model_1.Product)
-], Category.prototype, "products", void 0);
-exports.Category = Category = __decorate([
-    (0, sequelize_typescript_1.Table)({
-        tableName: "category",
-        timestamps: false,
+    (0, sequelize_typescript_1.ForeignKey)(() => user_model_1.User),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.UUID,
+        allowNull: false,
     })
-], Category);
+], Post.prototype, "user_id", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsTo)(() => user_model_1.User)
+], Post.prototype, "user", void 0);
+exports.Post = Post = __decorate([
+    (0, sequelize_typescript_1.Table)({
+        tableName: "posts",
+        timestamps: true,
+        createdAt: "cerated_at",
+        updatedAt: "updated_at",
+    })
+], Post);

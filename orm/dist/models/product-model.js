@@ -6,32 +6,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Category = void 0;
+exports.Product = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const product_model_1 = require("./product-model");
-let Category = class Category extends sequelize_typescript_1.Model {
+const category_model_1 = require("../models/category-model");
+let Product = class Product extends sequelize_typescript_1.Model {
 };
-exports.Category = Category;
+exports.Product = Product;
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     })
-], Category.prototype, "id", void 0);
+], Product.prototype, "id", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
         unique: true,
     })
-], Category.prototype, "title", void 0);
+], Product.prototype, "title", void 0);
 __decorate([
-    (0, sequelize_typescript_1.HasMany)(() => product_model_1.Product)
-], Category.prototype, "products", void 0);
-exports.Category = Category = __decorate([
+    (0, sequelize_typescript_1.Default)(10),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.FLOAT,
+        allowNull: false,
+    })
+], Product.prototype, "price", void 0);
+__decorate([
+    (0, sequelize_typescript_1.ForeignKey)(() => category_model_1.Category),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.INTEGER,
+        allowNull: false
+    })
+], Product.prototype, "id_category", void 0);
+exports.Product = Product = __decorate([
     (0, sequelize_typescript_1.Table)({
-        tableName: "category",
+        tableName: "products",
         timestamps: false,
     })
-], Category);
+], Product);

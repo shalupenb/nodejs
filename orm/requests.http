@@ -1,14 +1,100 @@
-GET http://localhost:3000/category/getAll HTTP/1.1
+GET https://localhost/category/getAll HTTP/1.1
 
 ###
 
-GET http://localhost:3000/category/getById/1 HTTP/1.1
+GET https://localhost/category/getById/1 HTTP/1.1
 
 ###
 
-POST http://localhost:3000/category/create HTTP/1.1
+POST https://localhost/category/create HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "Хлебобулочные изделия"
+  "title": "Items"
 }
+
+###
+
+GET https://localhost/product/ HTTP/1.1
+
+###
+
+POST https://localhost/product/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Item 1",
+  "price": 42.50,
+  "id_category": 3
+}
+
+###
+
+GET https://localhost/user/ HTTP/1.1
+
+###
+
+POST https://localhost/user/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Danya",
+  "login": "shlpnb",
+  "role": "admin"
+}
+
+###
+
+GET https://localhost/post/ HTTP/1.1
+
+###
+
+POST https://localhost/user HTTP/1.1
+content-type:application/json
+
+{
+    "name":"Ivan Stepanenko",
+    "login":"ivan2"
+}
+
+### 
+
+GET https://localhost/user HTTP/1.1
+
+###
+
+POST https://localhost/post HTTP/1.1
+content-type:application/json
+
+{
+    "title":"Post #3",
+    "description":"Description for Post #3",
+    "user_id":1
+}
+
+### 
+
+GET https://localhost/post HTTP/1.1
+
+###
+
+GET https://localhost/user/07ba741f-be7d-4312-80f5-331d6a5fdd05 HTTP/1.1
+
+###
+
+POST https://localhost/profile HTTP/1.1
+content-type:application/json
+
+{
+    "city":"Odessa",
+    "detail_info":"Detailed info about user Danya",
+    "user_id":"07ba741f-be7d-4312-80f5-331d6a5fdd05" 
+}
+
+###
+
+GET https://localhost/profile HTTP/1.1
+
+###
+
+DELETE https://localhost/user/07ba741f-be7d-4312-80f5-331d6a5fdd05 HTTP/1.1

@@ -6,32 +6,47 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Category = void 0;
+exports.Profile = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const product_model_1 = require("./product-model");
-let Category = class Category extends sequelize_typescript_1.Model {
+const user_model_1 = require("./user-model");
+let Profile = class Profile extends sequelize_typescript_1.Model {
 };
-exports.Category = Category;
+exports.Profile = Profile;
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     })
-], Category.prototype, "id", void 0);
+], Profile.prototype, "id", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING(30),
+        allowNull: false,
+        unique: true,
+    })
+], Profile.prototype, "city", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false,
-        unique: true,
     })
-], Category.prototype, "title", void 0);
+], Profile.prototype, "detail_info", void 0);
 __decorate([
-    (0, sequelize_typescript_1.HasMany)(() => product_model_1.Product)
-], Category.prototype, "products", void 0);
-exports.Category = Category = __decorate([
-    (0, sequelize_typescript_1.Table)({
-        tableName: "category",
-        timestamps: false,
+    (0, sequelize_typescript_1.ForeignKey)(() => user_model_1.User),
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.UUID,
+        allowNull: false,
     })
-], Category);
+], Profile.prototype, "user_id", void 0);
+__decorate([
+    (0, sequelize_typescript_1.BelongsTo)(() => user_model_1.User)
+], Profile.prototype, "user", void 0);
+exports.Profile = Profile = __decorate([
+    (0, sequelize_typescript_1.Table)({
+        tableName: "profiles",
+        timestamps: true,
+        createdAt: "cerated_at",
+        updatedAt: "updated_at",
+    })
+], Profile);
