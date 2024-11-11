@@ -27,14 +27,6 @@ userRoutes
   })
   .post(upload.single("file"), createUser, (req, res) => {
     console.log(req.file);
-    //TODO: перевірка існування body
-    //валідація даних   console.log(validator.isEmail(req.body.email));
-    // Хешуємо пароль console.log(bcrypt.hashSync(req.body.password, 10));
-    //bcrypt.compareSync()
-    // res.cookie("user", req.body.login, {
-    //   httpOnly: true,
-    //   maxAge: 1000 * 60 * 60,
-    // });
     req.session.user = {
       login: req.body.login,
       mime: path.extname(req.file.originalname),
