@@ -10,9 +10,9 @@ export class MessageController {
    */
   static async getMessages(req: Request, res: Response): Promise<any> {
     try {
-      const { userId, recieverId, adId } = req.query;
+      const { userId, chatPartnerId, adId } = req.query;
 
-      if (!userId || !recieverId || !adId) {
+      if (!userId || !chatPartnerId || !adId) {
         res.status(400).json({ message: "userId, chatPartnerId and adId required" });
         return;
       }
@@ -21,8 +21,8 @@ export class MessageController {
         where: {
           adId: Number(adId),
           [Op.or]: [
-            { senderId: Number(userId), recipientId: Number(recieverId) },
-            { senderId: Number(recieverId), recipientId: Number(userId) },
+            { senderId: Number(userId), recipientId: Number(chatPartnerId) },
+            { senderId: Number(chatPartnerId), recipientId: Number(userId) },
           ],
         },
         include: [

@@ -49,8 +49,8 @@ POST https://127.0.0.1:443/users
 Content-Type: application/json
 
 {
-  "login": "Test",
-  "email": "test@example.com",
+  "login": "Test123",
+  "email": "test123@example.com",
   "password": "321321",
   "role": "user"
 }
@@ -65,11 +65,11 @@ GET  https://127.0.0.1:443/users/4
 
 ###
 
-DELETE   https://127.0.0.1:443/users/delete/2
+DELETE   https://127.0.0.1:443/users/delete/4
 
 ###
 
-PUT  https://127.0.0.1:443/users/update/3
+PUT  https://127.0.0.1:443/users/update/4
 Content-Type: application/json
 
 {
@@ -99,20 +99,20 @@ POST https://127.0.0.1:443/ads
 Content-Type: application/json
 
 {
-    "title": "Selling RTX 0001",
+    "title": "Selling RTX 0002",
     "description": "no mining",
     "category": "GPUs",
-    "price": 123321,
+    "price": 123,
     "photos": [
         "photo1.jpg",
         "photo2.jpg"
     ],
-    "user_id": 4
+    "user_id": 3
 }
 
 ###
 
-POST https://127.0.0.1:443/ads/search?category=GPUs&maxPrice=150000
+POST https://127.0.0.1:443/ads/search?category=GPUs
 
 ###
 
@@ -141,19 +141,19 @@ POST https://127.0.0.1:443/messages/send
 Content-Type: application/json
 
 {
-  "senderId": 4,
-  "recipientId": 3,
+  "senderId": 3,
+  "recipientId": 5,
   "adId": 2,
   "content": "Can I come and check it by myself"
 }
 
 ###
 
-PATCH https://127.0.0.1:443/messages/read/1
+PATCH https://127.0.0.1:443/messages/read/3
 Content-Type: application/json
 
 ###
 
-GET https://127.0.0.1:443/messages/get?userId=4&chatPartnerId=3&adId=2
+GET https://127.0.0.1:443/messages/get?userId=3&chatPartnerId=5&adId=2
 
 ###
