@@ -1,0 +1,159 @@
+
+### USER
+
+POST https://127.0.0.1:443/users
+Content-Type: application/json
+
+{
+    "login": "testUSR",
+    "email": "testUSR@gmail.com",
+    "password": "pass",
+    "role": "guest"
+}
+
+###
+
+GET https://127.0.0.1:443/users
+
+###
+
+DELETE https://127.0.0.1:443/users/delete/1
+
+###
+
+PUT  https://127.0.0.1:443/users/update/1
+Content-Type: application/json
+
+{
+    "login": "NewLogin",
+    "email": "newemail@gmail.com",
+    "password": "new_pass",
+    "role": "guest"
+}
+
+### REG
+
+POST https://127.0.0.1:443/users
+Content-Type: application/json
+
+{
+  "login": "Danya",
+  "email": "danya@example.com",
+  "password": "123123",
+  "role": "admin"
+}
+
+###
+
+POST https://127.0.0.1:443/users
+Content-Type: application/json
+
+{
+  "login": "Test",
+  "email": "test@example.com",
+  "password": "321321",
+  "role": "user"
+}
+
+###
+
+GET  https://127.0.0.1:443/users
+
+###
+
+GET  https://127.0.0.1:443/users/4
+
+###
+
+DELETE   https://127.0.0.1:443/users/delete/2
+
+###
+
+PUT  https://127.0.0.1:443/users/update/3
+Content-Type: application/json
+
+{
+  "login": "testuserUPD",
+  "email": "testUPD@example.com",
+  "password": "pass",
+  "role": "user"
+}
+
+### LOGIN
+
+POST https://127.0.0.1:443/users/login
+Content-Type: application/json
+
+{
+    "login": "Danya",
+    "password": "123123"
+}
+
+### ADS
+
+GET https://127.0.0.1:443/ads
+
+###
+
+POST https://127.0.0.1:443/ads
+Content-Type: application/json
+
+{
+    "title": "Selling RTX 0001",
+    "description": "no mining",
+    "category": "GPUs",
+    "price": 123321,
+    "photos": [
+        "photo1.jpg",
+        "photo2.jpg"
+    ],
+    "user_id": 4
+}
+
+###
+
+POST https://127.0.0.1:443/ads/search?category=GPUs&maxPrice=150000
+
+###
+
+DELETE  https://127.0.0.1:443/ads/delete/1
+
+###
+
+PUT https://127.0.0.1:443/ads/update/2
+Content-Type: application/json
+
+{
+    "title": "Selling RTX 0001 UPDATE",
+    "description": "no mining",
+    "category": "GPUs",
+    "price": 100000,
+    "photos": [
+      "photo_upd1.jpg",
+      "photo_upd2.jpg"
+    ],
+    "user_id": 2
+}
+
+### MSG
+
+POST https://127.0.0.1:443/messages/send
+Content-Type: application/json
+
+{
+  "senderId": 4,
+  "recipientId": 3,
+  "adId": 2,
+  "content": "Can I come and check it by myself"
+}
+
+###
+
+PATCH https://127.0.0.1:443/messages/read/1
+Content-Type: application/json
+
+###
+
+GET https://127.0.0.1:443/messages/get?userId=4&chatPartnerId=3&adId=2
+
+###
